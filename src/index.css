@@ -58,7 +58,9 @@ body {
   border-radius: 0.9rem;
   overflow: scroll;
   position: relative;
-  overflow: hidden;
+  /* overflow: hidden; */
+  /* overflow-x: hidden; */
+  overflow: auto;
 }
 
 .loader {
