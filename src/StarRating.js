@@ -48,6 +48,7 @@ function StarRating({ maxRating = 5, size = 48, color = '#fcc419', className = '
                         onHoverOut={() => setTempRating(0)}
                         color={color}
                         size={size}
+                        key={i}
                     />
                 )}
             </div>
@@ -58,14 +59,17 @@ function StarRating({ maxRating = 5, size = 48, color = '#fcc419', className = '
 
 export default StarRating
 
-const starStyle = {
-    height: '48px',
-    width: '48px',
-    display: 'block',
-    cursor: 'pointer'
-}
+
 
 function Star({ full, onRate, onHoverIn, onHoverOut, color, size }) {
+
+    const starStyle = {
+        height: `${size}px`,
+        width: `${size}px`,
+        display: 'block',
+        cursor: 'pointer'
+    }
+
     return (
         <span role='button' style={starStyle} onClick={onRate} onMouseEnter={onHoverIn} onMouseLeave={onHoverOut}>
             {full ? (<svg
